@@ -1,0 +1,14 @@
+html {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+:root {
+  --p: 204 69% 53%;
+  --pf: 204 63% 44%;
+}

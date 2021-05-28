@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Pass the Message" property="og:title">
+    <meta content="A quick utility to save messages as notes." property="og:description">
+    <meta content="https://passthemessage.aktindo.me" property="og:url">
+    <meta content="#3498DA" data-react-helmet="true" name="theme-color">
+
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+
+    <title>Pass the Message</title>
+  </head>
+  <body class="bg-base-100 text-base-content">
+    <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content">
+      <div class="flex-none px-2 mx-2">
+        <span class="text-lg font-bold"> Pass the Message </span>
+      </div>
+      <div class="flex-1 px-2 mx-2">
+        <div class="items-stretch lg:flex">
+          <a class="btn btn-ghost btn-sm rounded-btn" href="/"
+            ><i class="fa-lg fas fa-home"></i
+          ></a>
+        </div>
+      </div>
+      <div class="flex-none">
+        <button
+          class="btn btn-ghost btn-sm rounded-btn"
+          onclick="changeTheme()"
+        >
+          <i id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="heading text-center">
+      <h1 class="text-4xl mt-10 mb-2">Pass the Message</h1>
+      <p>Quickly add a message and we will display it here!</p>
+    </div>
+
+    <div id="errors"></div>
+
+    <div class="content mt-10 m-5 p-10 card bg-base-200">
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Write a message!</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Hello World"
+          class="input"
+          id="messageInput"
+        />
+        <div class="button-group flex sm:justify-center"><button
+          onclick="saveMessage(); showLastMessage(); showAllMessages();"
+          class="btn btn-primary mt-5 w-20 mr-1"
+        >
+          Submit
+        </button>
+        <button class="btn btn-error w-32 mt-5" onclick="deleteAllMessages()">Delete All</button></div>
+      </div>
+    </div>
+
+    <div class="mt-10 m-5 p-10 card bg-base-200">
+      <div class="last-message mb-10">
+        <p class="text-2xl mb-1">Your last message</p>
+        <div id="lastMessage" class="last-message"></div>
+      </div>
+      <div class="all-messages">
+        <div
+          class="
+            collapse
+            w-96
+            sm:w-60
+            rounded-box
+            border border-base-300
+            collapse-arrow
+            sm:m-0
+          "
+        >
+          <input type="checkbox" />
+          <div class="collapse-title text-xl font-medium">
+            View all your messages
+          </div>
+          <div class="collapse-content" id="allMessages">
+          </div>
+        </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/e513b21ba7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
